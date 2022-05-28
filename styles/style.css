@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --lightgrey: hsl(217, 12%, 63%);
+  --mediumgrey: hsl(216, 12%, 54%);
+  --darkblue: hsl(213, 19%, 18%);
+  --verydarkblue: hsl(216, 12%, 8%);
+  --orange: hsl(25, 97%, 53%);
+}
+
+.star {
+  background-color: var(--verydarkblue);
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  font-size: 15px;
+  font-family: "Overpass", sans-serif;
+  font-weight: 400;
+  color: var(--lightgrey);
+  margin-top: 15px;
+}
+
+h1 {
+  font-family: "Overpass", sans-serif;
+  font-weight: 700;
+  color: var(--white);
+  margin-top: 40px;
+}
+
+.wrapper {
+  background-color: var(--verydarkblue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.rating_cart {
+  background-color: var(--darkblue);
+  /* width: 432px; */
+  padding: 30px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.rating_result {
+  background-color: var(--darkblue);
+  /* width: 432px; */
+  padding: 30px;
+  border-radius: 15px;
+
+  justify-content: center;
+  text-align: center;
+}
+
+@media screen and (max-width:1440px) {
+   .rating_cart{
+      width: 375px;
+   }
+
+   .rating_result{
+      width: 375px;
+   }
+
+   .text_field{
+      width: 60%;
+   }
+}
+
+@media screen and (max-width:375px) {
+   .rating_cart{
+      width: 90%;
+   }
+
+   .rating_result{
+      width: 90%;
+   }
+
+   .text_field{
+      width: 70%;
+   }
+}
+
+.raw {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.rating_point {
+  color: var(--lightgrey);
+  background-color: var(--verydarkblue);
+  font-family: "Overpass", sans-serif;
+  font-weight: 400;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.3s;
+}
+
+.rating_point:hover {
+  background-color: var(--mediumgrey);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.chosed {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.chosed:hover {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+button {
+  background-color: var(--orange);
+  color: hsl(0, 0%, 100%);
+  margin-top: 30px;
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+
+  transition: 0.3s;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--white);
+  color: var(--orange);
+}
+
+.text_field {
+  margin-top: 30px;
+
+  background-color: var(--verydarkblue);
+  font-family: "Overpass", sans-serif;
+  font-weight: 400;
+  padding: 5px;
+
+  margin-left: 20%;
+
+  border-radius: 10px;
+
+  color: var(--orange);
+}
