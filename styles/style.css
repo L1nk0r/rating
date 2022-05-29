@@ -15,10 +15,12 @@
   --darkblue: hsl(213, 19%, 18%);
   --verydarkblue: hsl(216, 12%, 8%);
   --orange: hsl(25, 97%, 53%);
+
+  --lightdarkblue: hsl(213deg 15% 30%);
 }
 
 .star {
-  background-color: var(--verydarkblue);
+  background-color: var(--lightdarkblue);
   border-radius: 50%;
   height: 40px;
   width: 40px;
@@ -105,7 +107,7 @@ h1 {
 
 .rating_point {
   color: var(--lightgrey);
-  background-color: var(--verydarkblue);
+  background-color: var(--lightdarkblue);
   font-family: "Overpass", sans-serif;
   font-weight: 400;
   height: 45px;
@@ -119,11 +121,11 @@ h1 {
   transition: 0.3s;
 }
 
-.rating_point:hover {
+/* .rating_point:hover {
   background-color: var(--mediumgrey);
   color: var(--white);
   cursor: pointer;
-}
+} */
 
 .chosed {
   background-color: var(--orange);
@@ -166,4 +168,29 @@ button:hover {
   border-radius: 10px;
 
   color: var(--orange);
+}
+
+.red{
+  background-color: red;
+  color: var(--white);
+}
+
+.orange{
+  background-color: orange;
+  color: var(--white);
+}
+
+.yellow{
+  background-color: yellow;
+  color: var(--white);
+}
+
+.light_green{
+  background-color: lightgreen;
+  color: var(--white);
+}
+
+.green{
+  background-color: green;
+  color: var(--white);
 }

@@ -7,18 +7,28 @@ var card = document.querySelector(".rating_cart");
 
 var st1 = document.querySelector("#star1");
 st1.addEventListener("click", function(){ setMark(st1) });
+st1.addEventListener("mouseenter", function(){ hoverMark(1) });
+st1.addEventListener("mouseleave", function(){ removeHover(1) });
 
 var st2 = document.querySelector("#star2");
 st2.addEventListener("click", function(){ setMark(st2) });
+st2.addEventListener("mouseenter", function(){ hoverMark(2) });
+st2.addEventListener("mouseleave", function(){ removeHover(2) });
 
 var st3 = document.querySelector("#star3");
 st3.addEventListener("click", function(){ setMark(st3) });
+st3.addEventListener("mouseenter", function(){ hoverMark(3) });
+st3.addEventListener("mouseleave", function(){ removeHover(3) });
 
 var st4 = document.querySelector("#star4");
 st4.addEventListener("click", function(){ setMark(st4) });
+st4.addEventListener("mouseenter", function(){ hoverMark(4) });
+st4.addEventListener("mouseleave", function(){ removeHover(4) });
 
 var st5 = document.querySelector("#star5");
 st5.addEventListener("click", function(){ setMark(st5) });
+st5.addEventListener("mouseenter", function(){ hoverMark(5) });
+st5.addEventListener("mouseleave", function(){ removeHover(5) });
 
 var sbmt = document.querySelector(".submit");
 sbmt.addEventListener("click", submit);
@@ -31,6 +41,41 @@ function setMark(element){
       element.classList.add("chosed");
    }
    
+}
+
+function hoverMark(n){
+   for (let i = 0; i < n; i++){
+      raw.children[i].classList.add(getStyle(n));
+   }
+}
+
+function getStyle(n){
+   let style = '';
+   switch (n){
+      case 1:
+         style = 'red';
+         break;
+      case 2:
+         style = 'orange';
+         break;
+      case 3:
+         style = 'yellow';
+         break;
+      case 4:
+         style = 'green';
+         break;
+      case 5:
+         style = 'light_green';
+         break;
+   }
+
+   return style;
+}
+
+function removeHover(n){
+   for (let i = 0; i < n; i++){
+      raw.children[i].classList.remove(getStyle(n));
+   }
 }
 
 function submit(){
