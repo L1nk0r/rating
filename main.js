@@ -1,5 +1,7 @@
 console.log('Page load!');
 
+var style = '';
+
 var raw = document.querySelector(".raw");
 var mark = 0;
 
@@ -37,6 +39,7 @@ function setMark(element){
    if (mark === 0){
       for (let i = 0; i < raw.children.length; i++) {
          raw.children[i].classList.remove('chosed');
+         raw.children[i].classList.remove(style);
       }
       element.classList.add("chosed");
    }
@@ -45,12 +48,20 @@ function setMark(element){
 
 function hoverMark(n){
    for (let i = 0; i < n; i++){
-      raw.children[i].classList.add(getStyle(n));
+      if (!raw.children[i].classList.contains('chosed'))
+         raw.children[i].classList.add(getStyle(n));
+   }
+}
+
+function removeHover(n){
+   for (let i = 0; i < n; i++){
+      raw.children[i].classList.remove(getStyle(n));
    }
 }
 
 function getStyle(n){
-   let style = '';
+   
+
    switch (n){
       case 1:
          style = 'red';
@@ -72,30 +83,23 @@ function getStyle(n){
    return style;
 }
 
-function removeHover(n){
-   for (let i = 0; i < n; i++){
-      raw.children[i].classList.remove(getStyle(n));
-   }
-}
-
 function submit(){
    for (let i = 0; i < raw.children.length; i++) {
       if (raw.children[i].classList.contains('chosed')){
          mark = raw.children[i].textContent;
       }
    }
+
    if (mark === 0){
       console.log(0);
    } else {
-      console.log(mark);
+      document.querySelector(".wrapper").innerHTML = `<div class="rating_result">
+         <img src="./images/illustration-thank-you.svg" alt="" />
+         <div class="text_field">You selected ` + mark + ` out of 5</div> 
+         <h1 class="header">Thank you!</h1>
+         <p>We appreciate you taking the time to
+         give a rating. If you ever need more support, don’t hesitate to get in touch!</p>
+         </div>`;
    }
-
-   document.querySelector(".wrapper").innerHTML = `<div class="rating_result">
-      <img src="./images/illustration-thank-you.svg" alt="" />
-      <div class="text_field">You selected ` + mark + ` out of 5</div> 
-      <h1 class="header">Thank you!</h1>
-      <p>We appreciate you taking the time to
-      give a rating. If you ever need more support, don’t hesitate to get in touch!</p>
-      </div>`;
 }
 
