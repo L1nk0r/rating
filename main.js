@@ -64,19 +64,19 @@ function getStyle(n){
 
    switch (n){
       case 1:
-         style = 'red';
+         style = 'darkred';
          break;
       case 2:
-         style = 'orange';
+         style = 'red';
          break;
       case 3:
-         style = 'yellow';
+         style = 'orange';
          break;
       case 4:
-         style = 'green';
+         style = 'yellow';
          break;
       case 5:
-         style = 'light_green';
+         style = 'green';
          break;
    }
 

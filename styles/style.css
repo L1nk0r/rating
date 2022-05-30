@@ -185,8 +185,8 @@ button:hover {
   color: var(--white);
 }
 
-.light_green{
-  background-color: lightgreen;
+.darkred{
+  background-color: #9b2d30;
   color: var(--white);
 }
 
